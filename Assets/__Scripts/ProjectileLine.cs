@@ -51,37 +51,15 @@ public class ProjectileLine : MonoBehaviour {
         points = new List<Vector3>();
     }
 
+
+    //TODO: Implement the AddPoint function
     public void AddPoint()
     {
-        // This is called to add a point to the line
-        Vector3 pt = _poi.transform.position;
-        if (points.Count > 0 && (pt - lastPoint).magnitude < minDist)
-        {
-            // If the point isn't far enough from the last point, it returns
-            return;
-        }
-        if (points.Count == 0)
-        {
-            // If this is the launch point...
-            Vector3 launchPosDiff = pt - Slingshot.LAUNCH_POS; // to be defined
-            // ...it adds an extra bit of line to aid aiming later
-            points.Add(pt + launchPosDiff);
-            points.Add(pt);
-            line.positionCount = 2;
-            // Sets the first two points
-            line.SetPosition(0, points[0]);
-            line.SetPosition(1, points[1]);
-            // Enables the LineRenderer
-            line.enabled = true;
-        }
-        else
-        {
-            // Normal behavior of adding a point
-            points.Add(pt);
-            line.positionCount = points.Count;
-            line.SetPosition(points.Count - 1, lastPoint);
-            line.enabled = true;
-        }
+        // *** Implement this code ***
+
+
+
+
     }
 
     // Returns the location of the most recently added point
@@ -111,7 +89,7 @@ public class ProjectileLine : MonoBehaviour {
                 }
                 else
                 {
-                    return; // Return if we didn't find a poi
+                    return; // Return if it is not the Projectile
                 }
             }
             else

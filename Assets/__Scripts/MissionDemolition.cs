@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+// TODO: You must set the values for the enum
 public enum GameMode
 {
 
 
 }
 
+
+// TODO: implement the MissionDemolition script
 public class MissionDemolition : MonoBehaviour {
-    static private MissionDemolition S; // a private Singleton
-
-    [Header("Set in Inspector")]
 
 
-    [Header("Set Dynamically")]
+
+
 
 
 	// Use this for initialization
@@ -26,7 +28,7 @@ public class MissionDemolition : MonoBehaviour {
 	
 	void StartLevel()
     {
-        // Get rid of the old castle if one exists
+
  
     }
 

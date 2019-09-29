@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// YOU must implement the Slingshot
+
 public class Slingshot : MonoBehaviour {
   
 
-   
-     // fields set in the Unity Inspector pane
-    [Header("Set in Inspector")]
-
-
-    // fields set dynamically
-    [Header("Set Dynamically")]
+// Place class variables here
 
 
 
@@ -20,20 +16,6 @@ public class Slingshot : MonoBehaviour {
 
     }
 
-    private void OnMouseEnter()
-    {
-
-    }
-
-    private void OnMouseExit()
-    {
-
-    }
-
-    private void OnMouseDown()
-    {
-
-    }
 
     private void Update()
     {

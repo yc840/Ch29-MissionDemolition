@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class FollowCam : MonoBehaviour {
     static public GameObject POI; // The static point of interest
 
@@ -36,21 +38,31 @@ public class FollowCam : MonoBehaviour {
                 if (POI.GetComponent<Rigidbody>().IsSleeping())
                 {
                     // return to default view
-                    POI = null;
                     // in the next update
+                    POI = null;
                     return;
                 }
             }
         }
-        // Limit the X & Y to minimum values
+
+
+        // Limit the X & Y to Max values
+        // the slingshot starts in -x, -y territory, so don't
+        // start moving until the projectile gets
+        // past the 0,0 point of the world
+
         destination.x = Mathf.Max(minXY.x, destination.x);
         destination.y = Mathf.Max(minXY.y, destination.y);
+
         // Interpolate from the current Camera position toward destination
         destination = Vector3.Lerp(transform.position, destination, easing);
+
         // Force destination.z to be camZ to keep the camera far enough away
         destination.z = camZ;
+
         // Set the camera to the destination
         transform.position = destination;
+
         // Set the orthographicSize of the Camera to keep Ground in view
         Camera.main.orthographicSize = destination.y + 10;
     }
