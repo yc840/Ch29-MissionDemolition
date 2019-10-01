@@ -65,7 +65,7 @@ public class Slingshot : MonoBehaviour {
 
         //Set it to isKinematic for now
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
-        projectile.GetComponent<Rigidbody>().isKinematic = true;
+        projectileRigidbody.isKinematic = true;
 
     }
 
