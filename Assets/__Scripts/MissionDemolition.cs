@@ -7,7 +7,9 @@ using UnityEngine.UI;
 // TODO: You must set the values for the enum
 public enum GameMode
 {
-
+    idle,
+    playing, 
+    levelEnd
 
 }
 
@@ -15,8 +17,18 @@ public enum GameMode
 // TODO: implement the MissionDemolition script
 public class MissionDemolition : MonoBehaviour {
 
+    static private MissionDemolition S;
 
+    [Header("Set in Inspector")]
+    public Text uitLEvel;
+    public Text uitShots;
+    public Text uitButton;
+    public Vector3 castlePos;
+    public GameObject[] castles;
 
+    [Header("Set Dynamically")]
+    public int level;
+    public int levelMax;
 
 
 
